@@ -1,0 +1,57 @@
+@mixin text($color, $fs, $fw, $pd) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    padding: $pd;
+}
+
+@mixin button($width, $height, $background-color, $border, $padding, $color, $font-weight, $font-size) {
+    width: $width;
+    height: $height;
+    background-color: $background-color;
+    border: $border;
+    padding: $padding;
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    cursor: pointer;
+}
+
+@mixin hover($background-color, $border-color, $color) {
+    background-color: $background-color;
+    border-color: $border-color;
+    color: $color;
+}
+
+@mixin buttonHover() {
+    background-color: $color-red-0;
+    color: $color-white-0;
+}
+
+@mixin inputFocus() {
+    background-color: $color-white-0;
+    outline: none;
+    border: 1px solid #dedfe0;
+}
+
+@mixin input($height, $width, $background-color, $border, $padding, $font-weight, $font-size) {
+    height: $height;
+    width: $width;
+    background-color: $background-color;
+    border: $border;
+    padding: $padding;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+@mixin responsive($breakpoint) {
+    @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+        $value: map-get($map: $breakpoints, $key: $breakpoint);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "breakpoint ko tồn tại";
+    }
+}

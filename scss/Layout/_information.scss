@@ -1,0 +1,100 @@
+        .information {
+            background-color: #f7f8fa;
+            padding: 32px 0;
+            .students_rating {
+                width: 85%;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                .student_opinion {
+                    margin-top: 20px;
+                    .card_infor {
+                        background-color: #fff;
+                        padding: 32px;
+                        box-shadow: 0 1px 3px 0 rgba(20, 23, 28, .15);
+                        .card_item {
+                            height: 200px;
+                            img {
+                                width: 64px;
+                                height: 64px;
+                                border-radius: 50%;
+                                display: inline-block;
+                                margin-right: 20px;
+                            }
+                            span {
+                                font-size: 16px;
+                                font-weight: 600;
+                                line-height: 1.5em;
+                            }
+                            p {
+                                margin-top: 20px;
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+            .partners {
+                text-align: center;
+                padding: 24px 0;
+                color: #686f7a;
+                font-size: 13px;
+                .logo {
+                    width: 70%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 auto;
+                    padding: 20px 0;
+                    img {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .non_students {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .teaching {
+                    text-align: center;
+                    width: 50%;
+                    padding: 30px;
+                    padding-left: 50px;
+                    border-right: 1px solid #dedfe0;
+                    button {
+                        @include button(128px, 44px, $color-red-0, 1px solid transparent, 11px 12px, $color-white-0, $fw-bold-0, $fs-0);
+                        white-space: nowrap;
+                        margin-right: 2px;
+                        &:hover {
+                            background-color: #992337;
+                        }
+                    }
+                }
+                .business {
+                    text-align: center;
+                    width: 50%;
+                    padding: 30px;
+                    padding-right: 50px;
+                    button {
+                        @include button(199px, 44px, $color-red-0, 1px solid transparent, 11px 12px, $color-white-0, $fw-bold-0, $fs-0);
+                        white-space: nowrap;
+                        margin-right: 2px;
+                        &:hover {
+                            background-color: #992337;
+                        }
+                    }
+                }
+                h5 {
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 1.47em;
+                    color: #505763;
+                    cursor: pointer;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.5em;
+                }
+            }
+        }

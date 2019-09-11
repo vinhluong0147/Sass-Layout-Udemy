@@ -1,0 +1,57 @@
+.intro {
+    background: linear-gradient(to left, $color-red-0 0, $color-purple 100%);
+    width: 100%;
+    @include responsive('medium') {
+        display: none;
+    }
+    .intro_content {
+        width: 1174px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 15px;
+        @include responsive('extra-large') {
+            width: 974px;
+            text-align: center;
+        }
+        @include responsive('large') {
+            width: 754px;
+            text-align: center;
+        }
+        .intro_item {
+            width: 33%;
+            display: flex;
+            i {
+                @include text($color-white-0, $fs-4 + 7, $fw-normal, null);
+                align-self: center;
+                margin-right: 16px;
+                @include responsive('extra-large') {
+                    display: none;
+                }
+            }
+            .intro_text {
+                p {
+                    @include text($color-white-0, $fs-0 + 2, $fw-bold-1, null);
+                    margin: 0;
+                }
+                p:last-child {
+                    @include text($color-white-0, $fs-0, $fw-normal, null);
+                }
+            }
+        }
+        .courses {
+            padding: 20px 25px;
+            padding-left: 0;
+            margin-bottom: none;
+        }
+        .instruction {
+            justify-content: center;
+            padding: 20px 25px;
+        }
+        .lifetime {
+            justify-content: flex-end;
+            padding: 20px 25px;
+            padding-right: 30px;
+        }
+    }
+}

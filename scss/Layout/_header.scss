@@ -1,0 +1,111 @@
+.myHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 auto;
+    height: 65px;
+    .header_logo {
+        align-items: center;
+        margin-right: 30px;
+        img {
+            width: 110px;
+            height: 100%;
+        }
+    }
+    .header_left {
+        display: flex;
+        flex: 1.2;
+        align-items: center;
+        .categories {
+            margin-right: 40px;
+            @include text($color-black-light, $fs-1, $fw-normal, null);
+            cursor: pointer;
+            i {
+                margin: 0 5px;
+                @include text($color-gray-2, $fs-1 + 1, $fw-normal, null);
+            }
+        }
+        .search_control {
+            flex: 0.94;
+            width: 100%;
+            .input_group {
+                display: flex;
+                .search_button {
+                    @include button(44px, null, $color-gray-1, none, null, red, $fw-normal, $fs-0);
+                    &:hover {
+                        @include buttonHover;
+                    }
+                }
+            }
+            .search_input {
+                @include input(44px, 100%, $color-gray-1, none, 10px 12px, $fw-normal, $fs-1);
+                &:focus {
+                    @include inputFocus;
+                    border-right: none;
+                }
+                &:focus+button {
+                    @include inputFocus;
+                    border-left: none;
+                    &:hover {
+                        @include buttonHover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $fs-1;
+    a {
+        @include text($color-black-light, $fs-1, $fw-normal, 12px 15px);
+        padding: 12px 15px;
+        text-decoration: none;
+        border-radius: 3px;
+        height: 45px;
+        line-height: 1.7;
+        &:hover {
+            @include hover($color-gray-1, $color-gray-1, null);
+        }
+    }
+    .header_right_item1 {
+        margin-left: 5px;
+    }
+    .cart_item {
+        @include text($color-black-light, $fs-2, $fw-normal, 12px 12px);
+        margin: 10px;
+        line-height: 20px;
+        &:hover {
+            border-radius: 50%;
+        }
+    }
+    .logIn_btn {
+        @include button(70px, 44px, $color-white-0, 1px solid $color-gray-4, 11px 12px, $color-gray-4, $fw-bold-0, $fs-0);
+        white-space: nowrap;
+        margin-left: 6px;
+        margin-right: 4px;
+        &:hover {
+            @include hover(null, $color-black-0, $color-black-0);
+        }
+    }
+    .signUp_btn {
+        @include button(80px, 44px, $color-red-0, 1px solid transparent, 11px 12px, $color-white-0, $fw-bold-0, $fs-0);
+        white-space: nowrap;
+        margin-right: 2px;
+        &:hover {
+            background-color: #992337;
+        }
+    }
+    @include responsive('extra-large') {
+        .header_right_item1,
+        .header_right_item2 {
+            display: none;
+        }
+        .search_input {
+            flex: 1;
+        }
+    }
+}
